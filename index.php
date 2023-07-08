@@ -1,5 +1,64 @@
 <?php
-echo '<h1>User ID: '.$_SERVER['uid'].'</h1>';
-echo '<h1>Nama: '.$_SERVER['givenName'].'</h1>';
-echo '<h1>Email: '.$_SERVER['mail'].'</h1>';
-?>
+echo '
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
+</head>
+<body>
+
+<h2 style="text-align:center">User Profile</h2>
+
+<div class="card">
+  <img src="https://simg.nicepng.com/png/small/933-9332131_profile-picture-default-png.png" alt="John" style="width:100%">
+  <h1>'.$_SERVER['uid'].'</h1>
+  <p class="title">'.$_SERVER['givenName'].'</p>
+  <p>'.$_SERVER['mail'].'</p>
+  <div style="margin: 24px 0;">
+    <a href="#"><i class="fa fa-dribbble"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-linkedin"></i></a>
+    <a href="#"><i class="fa fa-facebook"></i></a>
+  </div>
+  <p><a href="/Shibboleth.sso/Logout"><button>Logout</button></a></p>
+</div>
+
+</body>
+</html>';
